@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+html {
+	box-sizing: border-box;
+	font-size: 16px;
+}
+
+.preload * {
+	transition: none !important;
+	-webkit-transition: none !important;
+	-moz-transition: none !important;
+	-ms-transition: none !important;
+	-o-transition: none !important;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+	margin: 0;
+	padding: 0;
+	font-weight: 400;
+}
+
+:root {
+	--dark-background: #000000;
+	--dark-text: #fff;
+	--dark-grey: #A9A9A9;
+	--light-background: #fff;
+	--light-text: #000;
+	--light-grey: #A9A9A9;
+	--background: #fff;
+	--text-color: #000;
+	--text-grey: #A9A9A9;
+}
+
+::selection {
+	color: var(--background);
+	background: var(--text-color);
+}
+
+body {
+	font-family: 'Courier Prime', monospace;
+	/* font-family: 'Ubuntu', sans-serif; */
+	background-color: var(--background);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--text-color: #fff;
+		--background: #000;
+		--text-grey: var(--dark-grey);
+	}
+}
+
+.darkMode {
+	--text-color: var(--dark-text);
+	--background: var(--dark-background);
+	--text-grey: var(--dark-grey);
+}
+
+.lightMode {
+	--text-color: var(--light-text);
+	--background: var(--light-background);
+	--text-grey: var(--light-grey);
+}
+
+.main-container {
+	padding: 0px 172px;
+	min-height: 100vh;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: max-content auto auto;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 64px;
+	grid-column: 1 / 2;
+	grid-row: 1 / 1;
+}
+
+.first-letter {
+	color: var(--background);
+	background: var(--text-color);
+}
+
+.copy {
+	font-size: 16px;
+	color: var(--text-color)
+}
+
+.name {
+	opacity: 1;
+	transition: opacity 0.4s;
+	color: var(--text-color)
+}
+
+.name:hover {
+	opacity: 0.5;
+	transition: opacity 0.4s;
+}
+
+.toggle {
+	height: 16px;
+	width: 16px;
+	border-radius: 8px;
+	border: 2px solid var(--text-color);
+	cursor: pointer;
+}
+
+.content {
+	margin-top: 96px;
+	max-width: 930px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	margin-bottom: 154px;
+	grid-column: 1 / 2;
+	grid-row: 2 / 2;
+}
+
+.heading {
+	grid-column: 1 / 3;
+	grid-row: 1 / 1;
+	font-size: 48px;
+	font-weight: 400;
+	color: var(--text-color)
+}
+
+.sub-heading {
+	color: var(--text-grey);
+	font-size: 12px;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	margin-bottom: 32px;
+}
+
+.skills-focus,
+.areas-of-interest {
+	margin-top: 128px;
+}
+
+.skills-focus {
+	grid-column: 1 / 1;
+	grid-row: 2 / 2;
+}
+
+.areas-of-interest {
+	justify-self: end;
+	grid-column: 2 / 2;
+	grid-row: 2 / 2;
+}
+
+a,
+.archform,
+.social-link,
+.email {
+	text-decoration: none;
+	color: var(--text-color);
+}
+
+a:visited,
+.archform:visited,
+social-link:visited,
+.email:visited {
+	text-decoration: none;
+	color: var(--text-color);
+	transition: underline 0.4s;
+}
+
+.social-link:hover,
+.email:hover {
+	text-decoration: underline;
+	transition: underline 0.4s;
+}
+
+.archform {
+	text-decoration: none;
+	background-image: linear-gradient(var(--text-color), var(--text-color));
+	background-position: 100% 100%;
+	background-repeat: no-repeat;
+	background-size: 100% 6%;
+	transition: background-size 250ms ease-in-out;
+	padding-bottom: 0em;
+	display: inline;
+	cursor: pointer;
+}
+
+.archform:hover {
+	background-size: 100% 100%;
+	transition: background-size 250ms ease-in-out;
+	color: var(--background);
+}
+
+.archform:visited {
+	color: var(--text-color);
+}
+
+.archform:visited:hover {
+	color: var(--background);
+}
+
+footer {
+	margin-bottom: 64px;
+	margin-top: auto;
+	display: flex;
+	justify-content: space-between;
+	grid-column: 1 / 2;
+	grid-row: 3 / 3;
+	align-self: end;
+}
+
+.socials {
+	display: flex;
+}
+
+.social-link {
+	margin-right: 32px;
+}
+
+@media screen and (max-width: 1048px) {
+	.main-container {
+		padding: 0 86px;
+	}
+}
+
+@media screen and (max-width: 670px) {
+	.name:hover {
+		opacity: 1;
+	}
+
+	.main-container {
+		padding: 0px 24px;
+	}
+
+	.heading {
+		font-size: 40px;
+	}
+
+	.content {
+		margin: 88px 0;
+		grid-template-columns: 1fr;
+	}
+
+	.archform:hover,
+	.archform:visited:hover {
+		background-size: 100% 6%;
+		color: var(--text-light);
+	}
+
+	.areas-of-interest {
+		grid-column: 1 / 1;
+		grid-row: 3 / 3;
+		justify-self: start;
+	}
+
+	.skills-focus,
+	.areas-of-interest {
+		margin-top: 48px;
+	}
+
+	.social-link:hover,
+	.email:hover {
+		text-decoration: none;
+	}
+}
